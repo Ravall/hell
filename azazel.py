@@ -31,14 +31,14 @@ class Azazel():
 
     #папка куда нужно синхронизировать
     sync_folder = os.path.abspath(
-        os.path.join(_PATH, '../', 'files', 'media', 'crop'))
+        os.path.join(_PATH, 'files', 'media', 'crop'))
     # файл в котором храним время
     # последней синхронизации
     file_save_last_sync_data = PID_PATH + "/last_update"
     # папка откуда берем изображения,
     # которые нужно синхронизировать
     origin_folder = os.path.abspath(
-        os.path.join(_PATH, '../', 'files', 'media', 'origin'))
+        os.path.join(_PATH, 'files', 'media', 'origin'))
     #дополнительные папки, куда нужно
     #синхронизировать изображения
     add_sync_folders = []
