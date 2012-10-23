@@ -6,9 +6,9 @@ import re
 from daemon import runner
 from sets import Set
 
-_PATH = '/home/web/django_admin/'
-LOG_PATH = '/home/var/log/hell/'
-PID_PATH = '/home/var/run/hell/'
+_PATH = '/home/web/django_admin'
+LOG_PATH = '/home/var/log/hell'
+PID_PATH = '/home/var/run/hell'
 
 class Azazel():
     '''
