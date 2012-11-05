@@ -112,11 +112,14 @@ class Azazel(god.SanctaDaemon):
         for file_to_sync in new_files:
             #получаем размеры нужного изображения из имени папки
             size = folder.split('/')[-1]
-            command = 'convert "%s" -resize %s "%s"' % (
+            # ресайзим по-умному
+            command = 'convert "%s" -resize "%s^"  -gravity center ' \
+                      ' -extent %s -filter Blackman -modulate 110,102,100' \
+                      ' -sharpen 1x1 -enhance  "%s"' % (
                     self.origin_folder + '/' + file_to_sync,
-                    size,
+                    size, size,
                     folder + '/' + file_to_sync,
-                  )
+            )
             self.logger.info(command)
             result = os.system(command)
             self.logger.info(result)
