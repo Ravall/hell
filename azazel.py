@@ -10,7 +10,6 @@ import god
 import settings
 
 
-
 class Azazel(god.SanctaDaemon):
     '''
     демон азазель, синхронизирует и ресайзит изображения.
@@ -50,7 +49,6 @@ class Azazel(god.SanctaDaemon):
     def __init__(self, *args, **kwargs):
         god.SanctaDaemon.__init__(self)
         self.last_time_update = self.get_last_sync_date()
-        
 
     def get_last_update_origin_folder(self):
         '''
@@ -116,10 +114,9 @@ class Azazel(god.SanctaDaemon):
             command = 'convert "%s" -resize "%s^"  -gravity center ' \
                       ' -extent %s -filter Blackman -modulate 110,102,100' \
                       ' -sharpen 1x1 -enhance  "%s"' % (
-                    self.origin_folder + '/' + file_to_sync,
-                    size, size,
-                    folder + '/' + file_to_sync,
-            )
+                      self.origin_folder + '/' + file_to_sync,
+                      size, size,
+                      folder + '/' + file_to_sync)
             self.logger.info(command)
             result = os.system(command)
             self.logger.info(result)
@@ -151,7 +148,6 @@ class Azazel(god.SanctaDaemon):
                 self.sunc_folders()
                 self.set_last_update(last_update)
             time.sleep(10)
-
 
 
 daemon = Azazel()
