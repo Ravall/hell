@@ -1,5 +1,4 @@
 # -*- coding: utf8 -*-
- 
 __author__    = "Yaroslav Berezhinskiy"
 __copyright__ = "Copyright (C) 2011 Yaroslav Berezhinskiy"
  
